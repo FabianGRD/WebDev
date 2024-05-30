@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="Style/newArticle.css">
+    <title>Neuen Artikel erstellen</title>
+</head>
+<body>
+    <header>
+        <h1>Neuen Artikel erstellen</h1>
+    </header>
+    <nav>
+        <a href="index.html">Startseite</a>
+        <a href="aboutUs.html">Über uns</a>
+    </nav>
+    <div class="container">
+        <form action="../Backend/saveNewArticle.php" method="POST">
+            <div>
+                <label for="title">Titel:</label>
+                <input type="text" id="title" name="title" required>
+            </div>
+            <div>
+                <label for="shortContent">Kurze Beschreibung:</label>
+                <input type="text" id="shortContent" name="shortContent" required></input>
+            </div>
+            <select id="category" class="dropdown">
+                <option>Standard News</option>
+                <option>Top News</option>
+                <option>New Games</option>
+                <option>Reviews</option>
+                <option>Hardware</option>
+            </select>
+            <div>
+                <label for="content">Inhalt:</label>
+                <textarea id="content" class="content" name="content" rows="10" required></textarea>
+            </div>
+            <div>
+                <label for="image">Bild hochladen:</label>
+                <input type="file" id="image" name="image" accept="image/*">
+            </div>
+            <div>
+                <input type="submit" value="Artikel erstellen">
+            </div>
+        </form>
+    </div>
+</body>
+</html>
