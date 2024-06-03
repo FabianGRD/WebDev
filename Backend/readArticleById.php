@@ -1,5 +1,4 @@
 <?php
-// Einbinden der Datenbankverbindung
 require '../Backend/db_connect.php';
 
 if (isset($_GET['id'])) {
@@ -17,7 +16,5 @@ if (isset($_GET['id'])) {
     echo "Artikel-ID nicht angegeben.";
 }
 
-// Verbindung zur Datenbank schließen
 $conn->close();
-
 ?>

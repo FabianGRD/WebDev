@@ -48,7 +48,7 @@
     
             foreach ($articles as $article) {
                 echo'<div class="post">';
-                echo'<h2>' . htmlspecialchars($article["title"]) . '</h2>';
+                echo'<h3>' . htmlspecialchars($article["title"]) . '</h3>';
                 echo'<p>' . htmlspecialchars($article["shortContent"]) . '</p>';
                 echo '<a href="article.php?id=' . $article["id"] . '">Weiterlesen</a>';
                 echo'</div>';
