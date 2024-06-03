@@ -138,22 +138,29 @@ nav a:hover {
 
 .post {
     background-color: #43465c5e;
-    padding: 20px;
+    padding: 0px 0 10px 10px;
     margin-bottom: 20px;
     border-radius: 5px;
-    width: calc(33.33% - 10px);
+    width: calc(33% - 20px);
     box-sizing: border-box;
+    height: 50%; 
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
 
 .post h2 {
     color: #000000;
+    margin: 20px 0 20px 0;
 }
 
 .post p {
     color: #000000;
     overflow: hidden;
     text-overflow: ellipsis;
+    word-wrap: break-word;
     white-space: nowrap;
+    padding-bottom: 10px;
 }
 
 input[type="text"] {
