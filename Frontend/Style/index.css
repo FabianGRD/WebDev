@@ -179,7 +179,7 @@ input[type="submit"] {
 
 .new-article-button {
     display: block;
-    width: 200px;
+    width: 10vw;
     padding: 10px;
     margin-right: 20px;
     text-align: center;
@@ -200,8 +200,34 @@ input[type="submit"] {
         width: calc(50% - 10px);
     }
 
+    .new-article-button {
+        font-size: 1em;
+        width: 40vw;
+        padding: 5px;
+        height: auto;
+        margin: 0 0 20px 30vw;
+    }
+    
+    nav{
+        top: 15vh;
+    }
+
+    .banner{
+        display: none;
+    }
+
+    .slideshow-container{
+        display: none;
+        top: 8vh;
+        width: 500px;
+    }
+    .container{
+        margin-top: 100px;
+    }
+
     header {
         flex-direction: column;
+        height: 15vh;
         align-items: flex-start;
     }
 
@@ -219,6 +245,14 @@ input[type="submit"] {
 @media (max-width: 480px) {
     .post {
         width: 100%;
+    }
+
+    .new-article-button {
+        font-size: 10px;
+        width: 40vw;
+        padding: 5px;
+        height: auto;
+        margin: 0 0 20px 30vw;
     }
 
     input[type="text"] {

@@ -21,25 +21,32 @@
     <div class="placeholder"></div>
     <img class="banner" src="../Bilder/banner.png" alt="Banner" width="100%">
 
-    <div class="slideshow-container">
-        <div class="slide fade">
-            <img class="slideElement" src="../Bilder/Slideshow/168838.jpg" alt="Bild 1">
+    <?php
+        require '../Backend/readAllTopNewsWithPicture.php';
+    ?>
+
+    <?php if (!empty($topNews)) : ?>
+        <div class="slideshow-container">
+            <?php
+                foreach ($topNews as $news) {
+                    echo'<div class="slide fade">';
+                    echo'<img class="slideElement" src="' . htmlspecialchars($news["picture"]) . '" alt="Bild 1">';
+                    echo'</div>';
+                }
+            ?>
+            </div>
+            <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+            <a class="next" onclick="plusSlides(1)">&#10095;</a>
         </div>
-        <div class="slide fade">
-            <img class="slideElement" src="../Bilder/Slideshow/360_F_599535831_pwQFVG0qtf6ksLXeVTnUwFMvoW5H0WiS.jpg" alt="Bild 2">
+        <br>
+        <div style="text-align:center">
+            <?php
+                for ($i = 1; $i <= count($topNews); $i++) {
+                    echo '<span class="dot" onclick="currentSlide(' . $i . ')"></span>';
+                }
+            ?>
         </div>
-        <div class="slide fade">
-            <img class="slideElement" src="../Bilder/Slideshow/abstract_digital-gamepad-sl-800x450.jpg" alt="Bild 3">
-        </div>
-        <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
-        <a class="next" onclick="plusSlides(1)">&#10095;</a>
-    </div>
-    <br>
-    <div style="text-align:center">
-        <span class="dot" onclick="currentSlide(1)"></span>
-        <span class="dot" onclick="currentSlide(2)"></span>
-        <span class="dot" onclick="currentSlide(3)"></span>
-    </div>
+    <?php endif; ?>
 
     <div class="container">
         <div class="post-container">

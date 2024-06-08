@@ -19,7 +19,7 @@
     <?php
     if (isset($_GET['id'])) {
         $articleId = $_GET['id'];
-        require '../Backend/readArticleById.php?id=' . $articleId;
+        require '../Backend/readArticleById.php';
 
         echo '<div class="post">';
         echo '<h2>' . htmlspecialchars($article["title"]) . '</h2>';
