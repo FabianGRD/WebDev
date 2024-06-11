@@ -183,7 +183,7 @@ input[type="submit"] {
     padding: 10px;
     margin-right: 20px;
     text-align: center;
-    background-color: rgb(26, 26, 82);
+    background-color: rgba(26, 26, 82, 0.5);
     color: #fff;
     text-decoration: none;
     border-radius: 5px;
