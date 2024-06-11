@@ -17,17 +17,25 @@
 
     <div class="container">
     <?php
-    if (isset($_GET['id'])) {
-        $articleId = $_GET['id'];
-        require '../Backend/readArticleById.php';
+        if (isset($_GET['id'])) {
+            $articleId = $_GET['id'];
+            require '../Backend/readArticleById.php';
 
-        echo '<div class="post">';
-        echo '<h2>' . htmlspecialchars($article["title"]) . '</h2>';
-        echo '<p>' . nl2br(htmlspecialchars($article["content"])) . '</p>';
-        echo '</div>';
-    } else {
-        echo "Artikel nicht gefunden.";
-    }
+            echo '<div class="post">';
+            echo '<div class="article-buttons">';
+            echo '<form class"deleteForm" method="POST" action="../Backend/deleteArticleById.php?id=' . $articleId. '" onsubmit="return confirm(\'Sind Sie sicher, dass Sie diesen Artikel löschen möchten?\');">';
+            echo '<button class="deleteButton" type="submit">Löschen</button>';
+            echo '</form>';
+            echo '<form method="POST" action="editArticle.php?id=' . $articleId. '">';
+            echo '<button class="editButton" type="submit">Bearbeiten</button>';
+            echo '</form>';
+            echo '</div>';
+            echo '<h2>' . htmlspecialchars($article["title"]) . '</h2>';
+            echo '<p>' . nl2br(htmlspecialchars($article["content"])) . '</p>';
+            echo '</div>';
+        } else {
+            echo "Artikel nicht gefunden.";
+        }
     ?>
 </body>
 </html>

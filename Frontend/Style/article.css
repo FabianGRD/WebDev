@@ -39,3 +39,46 @@ nav a:hover {
 .post p {
     color: #666;
 }
+
+/* Style for the article buttons container */
+.article-buttons {
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+/* General button styles */
+.article-buttons button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    font-size: 1em;
+    cursor: pointer;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Specific styles for the delete button */
+.deleteButton {
+    background-color: #ff4c4c;
+    color: white;
+}
+
+.deleteButton:hover {
+    background-color: #ff1a1a;
+    box-shadow: 0 4px 8px rgba(255, 76, 76, 0.3);
+}
+
+/* Specific styles for the edit button */
+.editButton {
+    background-color: #4caf50;
+    color: white;
+}
+
+.editButton:hover {
+    background-color: #45a049;
+    box-shadow: 0 4px 8px rgba(76, 175, 80, 0.3);
+}
+form{
+    width: 100px;
+}
