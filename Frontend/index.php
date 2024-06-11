@@ -27,14 +27,14 @@
 
     <?php if (!empty($topNews)) : ?>
         <div class="slideshow-container">
-            <?php
-                foreach ($topNews as $news) {
-                    echo'<div class="slide fade">';
-                    echo'<img class="slideElement" src="' . htmlspecialchars($news["picture"]) . '" alt="Bild 1">';
-                    echo'</div>';
-                }
-            ?>
-            </div>
+            <?php foreach ($topNews as $news) : ?>
+                <div class="slide fade">
+                    <img class="slideElement" src="<?= htmlspecialchars($news["picture"]) ?>" alt="News Image">
+                    <div class="overlay">
+                        <a class="overlay-title" href="article.php?id=<?= htmlspecialchars($news["id"]) ?>"><?= htmlspecialchars($news["title"]) ?></a>
+                    </div>
+                </div>
+            <?php endforeach; ?>
             <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
             <a class="next" onclick="plusSlides(1)">&#10095;</a>
         </div>

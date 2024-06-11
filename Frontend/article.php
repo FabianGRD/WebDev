@@ -8,7 +8,7 @@
 </head>
 <body>
     <header>
-        <h1>Games Blog</h1>
+        <h1>Article</h1>
     </header>
     <nav>
         <a href="index.php">Startseite</a>
@@ -23,7 +23,7 @@
 
             echo '<div class="post">';
             echo '<div class="article-buttons">';
-            echo '<form class"deleteForm" method="POST" action="../Backend/deleteArticleById.php?id=' . $articleId. '" onsubmit="return confirm(\'Sind Sie sicher, dass Sie diesen Artikel löschen möchten?\');">';
+            echo '<form method="POST" action="../Backend/deleteArticleById.php?id=' . $articleId. '" onsubmit="return confirm(\'Sind Sie sicher, dass Sie diesen Artikel löschen möchten?\');">';
             echo '<button class="deleteButton" type="submit">Löschen</button>';
             echo '</form>';
             echo '<form method="POST" action="editArticle.php?id=' . $articleId. '">';
@@ -31,6 +31,13 @@
             echo '</form>';
             echo '</div>';
             echo '<h2>' . htmlspecialchars($article["title"]) . '</h2>';
+            
+            if (!empty($article["picture"])) {
+                echo '<div class="article-picture">';
+                echo '<img src="' . htmlspecialchars($article["picture"]) . '" alt="Article Image">';
+                echo '</div>';
+            }
+
             echo '<p>' . nl2br(htmlspecialchars($article["content"])) . '</p>';
             echo '</div>';
         } else {
