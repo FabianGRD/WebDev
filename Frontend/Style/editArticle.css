@@ -1,0 +1,21 @@
+.image-container {
+    display: flex;
+    align-items: center;
+}
+.image-container img {
+    max-width: 200px;
+    margin-right: 10px;
+    transition: filter 0.3s ease-in-out;
+}
+.delete-icon {
+    cursor: pointer;
+    color: rgb(43, 32, 32);
+    font-size: 24px;
+}
+.blurred {
+    filter: blur(5px);
+}
+.delete-icon-Active {
+    font-style: bolder;
+    font-size: 38px;
+}
