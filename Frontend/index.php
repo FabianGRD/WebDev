@@ -57,7 +57,7 @@
                 echo'<div class="post">';
                 echo'<h3>' . htmlspecialchars($article["title"]) . '</h3>';
                 echo'<span>' . htmlspecialchars($article["shortContent"]) . '</span>';
-                echo '<a href="article.php?id=' . $article["id"] . '">Weiterlesen</a>';
+                echo'<a href="article.php?id=' . $article["id"] . '">Weiterlesen</a>';
                 echo'</div>';
             }
             ?>

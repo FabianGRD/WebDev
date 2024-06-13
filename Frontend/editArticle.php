@@ -59,7 +59,7 @@
         </div>
         <div>
             <label for="image">Bild hochladen:</label>
-            <input type="file" id="image" name="image">
+            <input type="file" id="image" name="image" accept="image/png, image/gif, image/jpeg">
         </div>
         <div>
             <input type="hidden" id="imageDeleted" name="imageDeleted" value="0">
