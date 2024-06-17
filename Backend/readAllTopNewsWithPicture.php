@@ -8,7 +8,7 @@ if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 }
 
-$sql = "SELECT * FROM article WHERE category = 'Top News' and picture IS NOT null";
+$sql = "SELECT * FROM article WHERE category = 'Top News' and picture IS NOT null ORDER BY id DESC";
 $result = $conn->query($sql);
 
 $topNews = [];

@@ -8,7 +8,7 @@ if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 }
 
-$sql = "SELECT id, title, shortContent, category, content FROM article";
+$sql = "SELECT id, title, shortContent, category, content FROM article ORDER By id DESC";
 $result = $conn->query($sql);
 
 $articles = [];
