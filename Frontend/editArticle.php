@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="Style/newArticle.css">
     <link rel="stylesheet" href="Style/editArticle.css">
+    <link rel="stylesheet" href="Style/header.css">
     <title>Artikel bearbeiten</title>
 </head>
 <body>
@@ -15,6 +16,7 @@
         <a href="index.php">Startseite</a>
         <a href="aboutUs.html">Über uns</a>
     </nav>
+    <div class="placeholder"></div>
     <div class="container">
     <?php
     if (isset($_GET['id'])) {

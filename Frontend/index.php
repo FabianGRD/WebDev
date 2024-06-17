@@ -4,15 +4,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Games Blog</title>
     <link rel="stylesheet" href="Style/index.css">
+    <link rel="stylesheet" href="Style/header.css">
 </head>
 <body>
     <header>
-        <h1 class="heading">Games Blog</h1>
+        <h1>Games Blog</h1>
         <form action="index.php?search='<?= isset($_GET['search']) ?>'">
             <input type="text" name="search" id="searchInput" placeholder="Suche nach Titel">
-            <input type="submit" value="Suchen">
+            <input type="button" class="searchButton" value="Suchen">
         </form>
-        <a href="newArticle.html" class="new-article-button">Neuen Artikel erstellen</a>
+        <a href="newArticle.html" class="newArticleButton">Neuen Artikel erstellen</a>
     </header>
     <nav>
         <a href="index.php">Startseite</a>
