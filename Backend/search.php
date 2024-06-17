@@ -1,17 +1,27 @@
 <?php
-// Überprüfen, ob das Suchfeld gesetzt ist
-if(isset($_GET['search'])) {
-    // Wert des Suchfelds erhalten
+if(isset($_GET['search']) && !empty($_GET['search'])) {
     $search = $_GET['search'];
 
-    // Hier kommt deine Suchlogik
-    // Zum Beispiel könntest du eine Datenbankabfrage durchführen
-    // und die entsprechenden Ergebnisse anzeigen
+    require 'Database/db_connect.php';
 
-    // Für dieses Beispiel geben wir nur den Suchbegriff aus
-    echo "Du hast nach dem Titel '$search' gesucht.";
+    $sql = "SELECT id, title, shortContent, category, content FROM article WHERE title LIKE ? OR content LIKE ? OR shortContent LIKE ?";
+    $stmt = $conn->prepare($sql);
+    $searchTerm = '%' . $search . '%';
+    $stmt->bind_param('sss', $searchTerm, $searchTerm, $searchTerm);
+
+    $stmt->execute();
+    $result = $stmt->get_result();
+
+    $articles = [];
+    if ($result->num_rows > 0) {
+        while($row = $result->fetch_assoc()) {
+            $articles[] = $row;
+        }
+    }
+
+    $stmt->close();
+    $conn->close();
 } else {
-    // Wenn das Suchfeld nicht gesetzt ist, eine Fehlermeldung ausgeben
-    echo "Es wurde kein Suchbegriff eingegeben.";
+    exit;
 }
 ?>

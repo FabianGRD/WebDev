@@ -7,7 +7,6 @@ if (isset($_GET['id'])) {
     $sql = "DELETE FROM article WHERE id = ?";
     $stmt = $conn->prepare($sql);
 
-    echo" test";
     $stmt->bind_param("i", $articleId);
 
     if ($stmt->execute()) {

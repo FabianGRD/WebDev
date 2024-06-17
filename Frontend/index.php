@@ -8,8 +8,8 @@
 <body>
     <header>
         <h1 class="heading">Games Blog</h1>
-        <form action="../Backend/search.php" method="GET">
-            <input type="text" name="search" placeholder="Suche nach Titel">
+        <form action="index.php?search='<?= isset($_GET['search']) ?>'">
+            <input type="text" name="search" id="searchInput" placeholder="Suche nach Titel">
             <input type="submit" value="Suchen">
         </form>
         <a href="newArticle.html" class="new-article-button">Neuen Artikel erstellen</a>
@@ -22,7 +22,11 @@
     <img class="banner" src="../Bilder/banner.png" alt="Banner" width="100%">
 
     <?php
+    $searchQuery = isset($_GET['search']) ? trim($_GET['search']) : '';
+
+    if (empty($searchQuery)){
         require '../Backend/readAllTopNewsWithPicture.php';
+    }
     ?>
 
     <?php if (!empty($topNews)) : ?>
@@ -51,7 +55,12 @@
     <div class="container">
         <div class="post-container">
             <?php
-            require '../Backend/readAllArticles.php';
+            if (empty($searchQuery)){
+                require '../Backend/readAllArticles.php';
+
+            }else{
+                require '../Backend/search.php';
+            }
     
             foreach ($articles as $article) {
                 echo'<div class="post">';
