@@ -11,7 +11,7 @@
         <h1>Games Blog</h1>
         <form action="index.php?search='<?= isset($_GET['search']) ?>'">
             <input type="text" name="search" id="searchInput" placeholder="Suche nach Titel">
-            <input type="button" class="searchButton" value="Suchen">
+            <input type="submit" class="searchButton" value="Suchen">
         </form>
         <a href="newArticle.html" class="newArticleButton">Neuen Artikel erstellen</a>
     </header>
