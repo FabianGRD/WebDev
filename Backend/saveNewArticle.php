@@ -10,12 +10,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     if (isset($_FILES['image']) && $_FILES['image']['error'] == 0) {
         $targetDir = "../uploads/";
-        
         $targetFile = $targetDir . basename($_FILES['image']['name']);
-        $imageFileType = strtolower(pathinfo($targetFile, PATHINFO_EXTENSION));
 
         if (move_uploaded_file($_FILES['image']['tmp_name'], $targetFile)) {
-            $imageUrl = $targetFile;
+            $imageUrl =  "uploads/". basename($_FILES['image']['name']);
         } else {
             echo "Error uploading file.";
             exit();
@@ -26,7 +24,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             VALUES ('$title', '$shortContent', '$category', '$content', '$imageUrl')";
 
     if ($conn->query($sql) === TRUE) {
-        header('Location: ../Frontend/index.php');
+        header('Location: ../index.php');
         exit();
     } else {
         echo "Error: " . $sql . "<br>" . $conn->error;

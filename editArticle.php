@@ -21,10 +21,10 @@
     <?php
     if (isset($_GET['id'])) {
         $articleId = $_GET['id'];
-        require '../Backend/readArticleById.php';
+        require 'Backend/readArticleById.php';
     ?>
 
-    <form action="<?=' ../Backend/updateArticleById.php?id=' . $articleId. ' '?>" method="POST" enctype="multipart/form-data">
+    <form action="<?=' Backend/updateArticleById.php?id=' . $articleId. ' '?>" method="POST" enctype="multipart/form-data">
         <div>
             <label for="title">Titel:</label>
             <input type="text" id="title" name="title" value="<?= htmlspecialchars($article['title']) ?>" required>
@@ -84,7 +84,6 @@
 
             let imageDeleted = false;
 
-            // Event listener for the delete icon
             deleteIcon.addEventListener('click', function(event) {
                 event.preventDefault();
                 if (currentImage && !imageDeleted) {

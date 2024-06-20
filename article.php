@@ -20,11 +20,11 @@
     <?php
         if (isset($_GET['id'])) {
             $articleId = $_GET['id'];
-            require '../Backend/readArticleById.php';
+            require 'Backend/readArticleById.php';
 
             echo '<div class="post">';
             echo '<div class="article-buttons">';
-            echo '<form method="POST" action="../Backend/deleteArticleById.php?id=' . $articleId. '" onsubmit="return confirm(\'Sind Sie sicher, dass Sie diesen Artikel löschen möchten?\');">';
+            echo '<form method="POST" action="Backend/deleteArticleById.php?id=' . $articleId. '" onsubmit="return confirm(\'Sind Sie sicher, dass Sie diesen Artikel löschen möchten?\');">';
             echo '<button class="deleteButton" type="submit">Löschen</button>';
             echo '</form>';
             echo '<form method="POST" action="editArticle.php?id=' . $articleId. '">';

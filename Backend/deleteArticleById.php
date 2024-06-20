@@ -30,10 +30,10 @@ if (isset($_GET['id'])) {
             $row = $result->fetch_assoc();
 
             if ($row['count'] == 0) {
-                unlink($picture);
+                unlink("../". $picture);
             }
 
-            header("Location: ../Frontend/index.php");
+            header("Location: ../index.php");
             exit();
         } else {
             echo "Kein Artikel mit dieser ID gefunden.";

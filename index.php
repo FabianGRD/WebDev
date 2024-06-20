@@ -20,13 +20,13 @@
         <a href="aboutUs.html">Über uns</a>
     </nav>
     <div class="placeholder"></div>
-    <img class="banner" src="../Bilder/banner.png" alt="Banner" width="100%">
+    <img class="banner" src="Bilder/banner.png" alt="Banner" width="100%">
 
     <?php
     $searchQuery = isset($_GET['search']) ? trim($_GET['search']) : '';
 
     if (empty($searchQuery)){
-        require '../Backend/readAllTopNewsWithPicture.php';
+        require 'Backend/readAllTopNewsWithPicture.php';
     }
     ?>
 
@@ -57,10 +57,10 @@
         <div class="post-container">
             <?php
             if (empty($searchQuery)){
-                require '../Backend/readAllArticles.php';
+                require 'Backend/readAllArticles.php';
 
             }else{
-                require '../Backend/search.php';
+                require 'Backend/search.php';
             }
     
             foreach ($articles as $article) {
