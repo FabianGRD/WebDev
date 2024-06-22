@@ -2,13 +2,7 @@
 
 require 'Database/db_connect.php';
 
-$conn = new mysqli($servername, $username, $password, $dbname);
-
-if ($conn->connect_error) {
-    die("Connection failed: " . $conn->connect_error);
-}
-
-$sql = "SELECT id, title, shortContent, category, content FROM article ORDER By id DESC";
+$sql = "SELECT id, title, shortContent, category FROM article ORDER By id DESC";
 $result = $conn->query($sql);
 
 $articles = [];

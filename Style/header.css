@@ -29,7 +29,6 @@ header form {
 
 nav {
     background-color: #B7B597;
-    text-align: center;
     justify-content: center;
     align-items: center;
     display: flex;
@@ -41,7 +40,6 @@ nav {
 }
 
 nav a {
-    padding: auto;
     color: #254336;
     text-decoration: none;
     margin: 0 10px;

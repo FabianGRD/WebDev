@@ -85,7 +85,6 @@
             let imageDeleted = false;
 
             deleteIcon.addEventListener('click', function(event) {
-                event.preventDefault();
                 if (currentImage && !imageDeleted) {
                     currentImage.classList.add('blurred');
                     deleteIcon.classList.add('delete-icon-Active');
