@@ -49,6 +49,10 @@ form input[type="submit"]:hover {
 .dropdown:hover {
     cursor: pointer;
 }
+.errorMessage{
+    margin-top: 10px;
+    color: rgb(155, 8, 8);
+}
 @media (max-width: 768px) {
     form {
         width: 70vw;

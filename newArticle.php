@@ -24,7 +24,7 @@
             </div>
             <div>
                 <label for="shortContent">Kurze Beschreibung:</label>
-                <input type="text" id="shortContent" name="shortContent" required></input>
+                <input type="text" id="shortContent" name="shortContent" required>
             </div>
             <div>
                 <label for="category">Kategorie:</label>
@@ -42,7 +42,12 @@
             </div>
             <div>
                 <label for="image">Bild hochladen:</label>
-                <input type="file" id="image" name="image" accept="image/png, image/jpeg" >
+                <input type="file" id="image" name="image" accept="image/png, image/jpeg">
+                <?php
+                if (isset($_GET['error'])) {
+                    echo '<div class="errorMessage">'. htmlspecialchars($_GET['error']) . "</div>";
+                }
+                ?>
             </div>
             <div>
                 <input type="submit" value="Artikel erstellen">

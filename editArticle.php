@@ -36,12 +36,11 @@
         <div>
             <label for="category">Kategorie:</label>
             <select id="category" name="category" class="dropdown">
-                <option value="<?= htmlspecialchars($article['category']) ?>"><?= htmlspecialchars($article['category']) ?></option>
-                <option value="Standard News">Standard News</option>
-                <option value="Top News">Top News</option>
-                <option value="New Games">New Games</option>
-                <option value="Reviews">Reviews</option>
-                <option value="Hardware">Hardware</option>
+                <option value="Standard News" <?php echo (htmlspecialchars($article['category']) === 'Standard News') ? 'selected' : ''; ?>>Standard News</option>
+                <option value="Top News" <?php echo (htmlspecialchars($article['category']) === 'Top News') ? 'selected' : ''; ?>>Top News</option>
+                <option value="New Games" <?php echo (htmlspecialchars($article['category']) === 'New Games') ? 'selected' : ''; ?>>New Games</option>
+                <option value="Reviews" <?php echo (htmlspecialchars($article['category']) === 'Reviews') ? 'selected' : ''; ?>>Reviews</option>
+                <option value="Hardware" <?php echo (htmlspecialchars($article['category']) === 'Hardware') ? 'selected' : ''; ?>>Hardware</option>
             </select>
         </div>
         <div>
@@ -61,7 +60,12 @@
         </div>
         <div>
             <label for="image">Bild hochladen:</label>
-            <input type="file" id="image" name="image" accept="image/png, image/gif, image/jpeg">
+            <input type="file" id="image" name="image" accept="image/png, image/jpeg">
+            <?php
+                if (isset($_GET['error'])) {
+                    echo '<div class="errorMessage">'. htmlspecialchars($_GET['error']) . "</div>";
+                }
+            ?>
         </div>
         <div>
             <input type="hidden" id="imageDeleted" name="imageDeleted" value="0">

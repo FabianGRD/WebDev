@@ -13,7 +13,7 @@
             <input type="text" name="search" id="searchInput" placeholder="Suche nach Titel">
             <input type="submit" class="searchButton" value="Suchen">
         </form>
-        <a href="newArticle.html" class="newArticleButton">Neuen Artikel erstellen</a>
+        <a href="newArticle.php" class="newArticleButton">Neuen Artikel erstellen</a>
     </header>
     <nav>
         <a href="index.php">Startseite</a>
@@ -24,6 +24,8 @@
 
     <?php
     $searchQuery = isset($_GET['search']) ? trim($_GET['search']) : '';
+    $category = isset($_GET['category']) ? trim($_GET['category']) : 'Alle News';
+    
 
     if (empty($searchQuery)){
         require 'Backend/readAllTopNewsWithPicture.php';
@@ -31,6 +33,7 @@
     ?>
 
     <?php if (!empty($topNews)) : ?>
+        <h2 class="topNews">Top News</h2>
         <div class="slideshow-container">
             <?php foreach ($topNews as $news) : ?>
                 <div class="slide fade">
@@ -53,14 +56,32 @@
         </div>
     <?php endif; ?>
 
+
+    <?php if (empty($searchQuery)) : ?>
+        <form class="container" id="categoryForm" action="index.php" method="GET">
+            <select id="filter" name="category" class="filterNews" onchange="submitForm()">
+                <option value="Alle News" <?php echo ($category === 'Alle News') ? 'selected' : ''; ?>>Alle News</option>
+                <option value="Standard News" <?php echo ($category === 'Standard News') ? 'selected' : ''; ?>>Standard News</option>
+                <option value="Top News" <?php echo ($category === 'Top News') ? 'selected' : ''; ?>>Top News</option>
+                <option value="New Games" <?php echo ($category === 'New Games') ? 'selected' : ''; ?>>New Games</option>
+                <option value="Reviews" <?php echo ($category === 'Reviews') ? 'selected' : ''; ?>>Reviews</option>
+                <option value="Hardware" <?php echo ($category === 'Hardware') ? 'selected' : ''; ?>>Hardware</option>
+            </select>
+        </form>
+    <?php endif; ?>
+
     <div class="container">
         <div class="post-container">
             <?php
             if (empty($searchQuery)){
-                require 'Backend/readAllArticles.php';
+                if ($category !== 'Alle News') {
+                    require 'Backend/getArticlesByCategory.php';
+                } else {
+                    require 'Backend/readAllArticles.php';
+                }
 
             }else{
-                require 'Backend/search.php';
+                require 'Backend/search.php'; 
             }
     
             foreach ($articles as $article) {
@@ -100,6 +121,10 @@
             }
             slides[slideIndex-1].style.display = "flex";  
             dots[slideIndex-1].className += " active";
+        }
+
+        function submitForm() {
+            document.getElementById('categoryForm').submit();
         }
     </script>
 </body>

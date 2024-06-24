@@ -176,6 +176,34 @@ input[type="text"] {
     height: 100%;
 }
 
+.topNews{
+    justify-content: center;
+    align-items: center;
+    display: flex;
+}
+
+.filterNews {
+    background-color: #b7b597b2;
+    border: 1px solid #000000;
+    padding: 10px 15px;
+    font-size: 16px;
+    cursor: pointer;
+    width: 200px;
+    max-width: 100%;
+    border-radius: 5px;
+    margin-left: auto; 
+    margin-right: auto; 
+    display: block; 
+}
+
+.filterNews:hover {
+    border-color: #aaa;
+}
+
+.filterNews:focus {
+    outline: none; 
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1); 
+}
 
 @media (max-width: 768px) {
     
@@ -183,16 +211,16 @@ input[type="text"] {
         width: calc(50% - 10px);
     }
 
+    h1{
+        margin-left: 2px;
+    }
+
     .new-article-button {
-        font-size: 1em;
-        width: 40vw;
+        font-size: 0.3em;
+        width: 5vw;
         padding: 5px;
         height: auto;
         margin: 0 0 20px 30vw;
-    }
-    
-    nav{
-        top: 20vh !important;
     }
 
     .banner{
@@ -202,36 +230,52 @@ input[type="text"] {
     .slideshow-container{
         display: none;
     }
+
+    .topNews{
+        display: none;
+    }
+    
     .dot {
         display: none;
     }
     .container{
-        margin-top: 100px;
-    }
-
-    header {
-        flex-direction: column;
-        height: 20vh !important;
-        align-items: flex-start;
-    }
-
-    header form {
         margin-top: 10px;
-        width: 100%;
-        justify-content: flex-start;
     }
 
     input[type="text"] {
         margin-left: 20px;
-        width: 80vw;
+        height: 20px;
+        font-size: 0.5rem;
+        width: 20vw;
+    }
+    .searchButton {
+        width: 40px;
+        height: 20px;
+        font-size:  0.5rem;
+        padding: 0;
+        margin: 0 !important;
     }
     
     .newArticleButton{
-        width: 85vw !important;
-        margin: 0 0 20px 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 20vw !important;
+        height: 20px;
+        font-size:  0.6rem;
+        margin: 0;
     }
 
     .post {
         width: 100%;
+    }
+}
+
+@media (max-width: 375px) {
+    .newArticleButton{
+        width: 20vw !important;
+        height: 20px;
+        font-size:  0.5rem;
+        margin: 0;
     }
 }
