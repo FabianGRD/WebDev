@@ -12,7 +12,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $targetFile = $targetDir . basename($_FILES["image"]["name"]);
     $imageFileType = strtolower(pathinfo($targetFile, PATHINFO_EXTENSION));
 
-    if (!in_array($imageFileType, ["jpg", "jpeg", "png"])) {
+    if (!in_array($imageFileType, ["jpg", "jpeg", "png"]) && $imageFileType != null) {
         header("Location: ../newArticle.php?error=" . urlencode("Article wasn't saved. File upload failed. Only JPG, JPEG & PNG files are allowed."));
         exit();
     }
