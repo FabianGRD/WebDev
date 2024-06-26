@@ -35,11 +35,7 @@ if (isset($_GET['id'])) {
 
             header("Location: ../index.php");
             exit();
-        } else {
-            echo "Kein Artikel mit dieser ID gefunden.";
         }
-    } else {
-        echo "Fehler beim Löschen des Artikels: " . $stmt->error;
     }
 
     $stmt->close();

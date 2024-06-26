@@ -9,12 +9,9 @@ if (isset($_GET['id'])) {
     $stmtUpdate->bind_param("i", $articleId);
     if ($stmtUpdate->execute()) {
         return;
-    } else {
-        echo "Fehler beim Löschen des Bildes: " . $stmtUpdate->error;
     }
+    
     $stmtUpdate->close();
-} else {
-    echo "Article ID is missing.";
 }
 
 $conn->close();

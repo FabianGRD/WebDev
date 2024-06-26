@@ -9,11 +9,7 @@ if (isset($_GET['id'])) {
 
     if ($result && $result->num_rows > 0) {
         $article = $result->fetch_assoc();
-    } else {
-        echo "Artikel nicht gefunden.";
     }
-} else {
-    echo "Artikel-ID nicht angegeben.";
 }
 
 $conn->close();

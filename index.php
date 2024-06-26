@@ -56,7 +56,6 @@
         </div>
     <?php endif; ?>
 
-
     <?php if (empty($searchQuery)) : ?>
         <form class="container" id="categoryForm" action="index.php" method="GET">
             <select id="filter" name="category" class="filterNews" onchange="submitForm()">

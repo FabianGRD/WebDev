@@ -61,4 +61,8 @@ nav a {
         height: 30px;
         top: 60px;
     }
+
+    .placeholder{
+        height: 90px;
+    }
 }

@@ -24,7 +24,7 @@
         require 'Backend/readArticleById.php';
     ?>
 
-    <form action="<?=' Backend/updateArticleById.php?id=' . $articleId. ' '?>" method="POST" enctype="multipart/form-data">
+    <form action="<?=' Backend/updateArticleById.php?id=' . $articleId. ' '?>" onsubmit="return confirm('Wollen sie die Änderungen wirklich speichern?')" method="POST" enctype="multipart/form-data">
         <div>
             <label for="title">Titel:</label>
             <input type="text" id="title" name="title" value="<?= htmlspecialchars($article['title']) ?>" required>

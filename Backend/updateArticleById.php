@@ -50,11 +50,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         }
 
         $stmt->close();
-    } else {
-        echo "Article ID is missing.";
-    }
-} else {
-    echo "Invalid request method.";
+    } 
 }
 
 $conn->close();
